@@ -1,8 +1,9 @@
 {
   "name": "restricted-resolver",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "Like the universal resolver, but with some restrictions.",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "node server"
   },
