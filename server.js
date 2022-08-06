@@ -23,7 +23,9 @@ const requestListener = async function (req, res) {
     let didDocument = null;
 
     if (did.startsWith("did:key")) {
-      ({ didDocument } = await didKey.resolve(did));
+      ({ didDocument } = await didKey.resolve(did, {
+        accept: "application/did+json",
+      }));
     }
 
     if (did.startsWith("did:web")) {

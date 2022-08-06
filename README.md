@@ -1,5 +1,7 @@
 # Restricted Resolver
 
+[![Docker Hub](https://github.com/transmute-industries/restricted-resolver/actions/workflows/cd.yml/badge.svg)](https://github.com/transmute-industries/restricted-resolver/actions/workflows/cd.yml)
+
 Like the universal resolver, but with some restrictions.
 
 - No blockchain DID Methods.
@@ -10,7 +12,9 @@ Like the universal resolver, but with some restrictions.
 ## Docker
 
 ```
-
+docker run -d -p 8080:8080 transmute/restricted-resolver
+curl -sX GET http://localhost:8080/1.0/identifiers/did:web:did.actor:supply-chain:manufacturer:carlos
+docker stop $(docker ps -q --filter ancestor=transmute/restricted-resolver )
 ```
 
 ## Development
