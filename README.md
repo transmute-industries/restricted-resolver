@@ -11,6 +11,8 @@ Like the universal resolver, but with some restrictions.
 - `did:key` support for `secp256r1`, `secp348r1`, `secp256k1`, `ed25519`, `x25519`
 - `did:web` support for `.well-known` and `path based` DIDs.
 
+Learn more about [Transmute](https://transmute.industries/).
+
 ## Docker
 
 ```
