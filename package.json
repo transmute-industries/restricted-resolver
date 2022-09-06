@@ -10,6 +10,7 @@
   "author": "Orie Steele",
   "license": "Apache-2.0",
   "dependencies": {
+    "@or13/did-jwk": "^0.0.1",
     "@transmute/did-key.js": "^0.3.0-unstable.8",
     "@transmute/did-web": "^0.7.0-unstable.65"
   }
