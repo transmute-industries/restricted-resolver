@@ -3,6 +3,8 @@ const http = require("http");
 const didKey = require("@transmute/did-key.js");
 const didWeb = require("@transmute/did-web");
 
+const didJwk = require('@or13/did-jwk')
+
 const endpointPathPrefix = "/1.0/identifiers/";
 
 const didDocumentToDidResolutionResponseObject = (didDocument) => {
@@ -11,7 +13,7 @@ const didDocumentToDidResolutionResponseObject = (didDocument) => {
     didDocument: didDocument,
     didResolutionMetadata: {
       contentType: "application/json",
-      pattern: "^did:(?:web:|key).+$",
+      pattern: "^did:(?web:|jwk:|key:).+$",
     },
     didDocumentMetadata: {},
   };
@@ -21,6 +23,10 @@ const requestListener = async function (req, res) {
     const didUrl = req.url.replace(endpointPathPrefix, "");
     const did = didUrl.split("#")[0];
     let didDocument = null;
+
+    if (did.startsWith("did:jwk")) {
+      didDocument = await didJwk.resolve(did);
+    }
 
     if (did.startsWith("did:key")) {
       ({ didDocument } = await didKey.resolve(did, {

@@ -18,6 +18,7 @@ Learn more about [Transmute](https://transmute.industries/).
 ```
 docker pull transmute/restricted-resolver
 docker run -d -p 8080:8080 transmute/restricted-resolver
+curl -sX GET http://localhost:8080/1.0/identifiers/did:jwk:eyJrdHkiOiJFQyIsImNydiI6IlAtMjU2IiwieCI6Ik53LTZyVkJZU1pfeEU0ZnFwTUFRVzA2S1JPQ3JrMFUxZFRYZE00dnVDRGsiLCJ5Ijoib01YRUhaZWc4aldWMUpqeHRHekhpM0NMLWJPMTBhc0FiSUNndkFZdmZyRSJ9
 curl -sX GET http://localhost:8080/1.0/identifiers/did:web:did.actor:supply-chain:manufacturer:carlos
 curl -sX GET http://localhost:8080/1.0/identifiers/did:key:z6MkevkjV3woJLJ1p6tSvx9PUTyn7e8cSm9Wy5VjkWUo4WLK
 curl -sX GET http://localhost:8080/1.0/identifiers/did:key:zDnaefnQrwjZPFASgQoQoTfrcG65gxHK4qNappjxnv6aiATQt
