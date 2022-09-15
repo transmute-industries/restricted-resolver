@@ -1,6 +1,6 @@
 {
   "name": "restricted-resolver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Like the universal resolver, but with some restrictions.",
   "main": "index.js",
   "private": true,
