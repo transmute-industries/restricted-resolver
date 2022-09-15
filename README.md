@@ -7,7 +7,7 @@ Like the universal resolver, but with some restrictions.
 - No blockchain DID Methods.
 - No JSON-LD Processing, however, valid JSON-LD is returned.
 - Ignores accept header.
-- Only returns `application/json`.
+- Only returns `application/did+ld+json`.
 - `did:key` support for `secp256r1`, `secp348r1`, `secp256k1`, `ed25519`, `x25519`
 - `did:web` support for `.well-known` and `path based` DIDs.
 
