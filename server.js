@@ -7,12 +7,14 @@ const didJwk = require('@or13/did-jwk')
 
 const endpointPathPrefix = "/1.0/identifiers/";
 
+const didMethodContentType = 'application/did+ld+json'
+
 const didDocumentToDidResolutionResponseObject = (didDocument) => {
   return {
     "@context": "https://w3id.org/did-resolution/v1",
     didDocument: didDocument,
     didResolutionMetadata: {
-      contentType: "application/json",
+      contentType: didMethodContentType,
       pattern: "^did:(?web:|jwk:|key:).+$",
     },
     didDocumentMetadata: {},
@@ -41,7 +43,7 @@ const requestListener = async function (req, res) {
     if (didDocument !== null) {
       const resolutionResponseObject =
         didDocumentToDidResolutionResponseObject(didDocument);
-      res.writeHead(200, { "Content-Type": "application/json" });
+      res.writeHead(200, { "Content-Type": didMethodContentType });
       res.end(JSON.stringify(resolutionResponseObject, null, 2));
     }
   }
